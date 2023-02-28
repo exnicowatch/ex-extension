@@ -1,4 +1,4 @@
-# exnicowatch/ex-front
+# exnicowatch/ex-extension
 
 [exnicowatch](https://github.com/exnicowatch)の拡張機能に関するリポジトリ
 
