@@ -9,14 +9,20 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: yarn install --frozen-lockfile && yarn run package
+      - name: Set version
+        id: version
+        run: |
+          REPOSITORY=$(echo ${{ github.repository }} | sed -e "s#.*/##")
+          VERSION=$(echo ${{ github.ref }} | sed -e "s#refs/tags/##g")
+          echo ::set-output name=version::$VERSION
       - name: Rename zip files
         run: |
-          mv build/chrome-mv3-prod.zip build/ene-chrome-${{ github.ref }}.zip
-          mv build/edge-mv3-prod.zip build/ene-edge-${{ github.ref }}.zip
-          mv build/firefox-mv2-prod.zip build/ene-firefox-${{ github.ref }}.zip
+          mv build/chrome-mv3-prod.zip build/ene-chrome-${{ steps.version.outputs.version }}.zip
+          mv build/edge-mv3-prod.zip build/ene-edge-${{ steps.version.outputs.version }}.zip
+          mv build/firefox-mv2-prod.zip build/ene-firefox-${{ steps.version.outputs.version }}.zip
       - name: Upload Release
         uses: ncipollo/release-action@v1.12.0
         with:
-          artifacts: "build/ene-chrome-${{ github.ref }}.zip,build/ene-edge-${{ github.ref }}.zip,build/ene-firefox-${{ github.ref }}.zip"
+          artifacts: "build/ene-chrome-${{ steps.version.outputs.version }}.zip,build/ene-edge-${{ steps.version.outputs.version }}.zip,build/ene-firefox-${{ steps.version.outputs.version }}.zip"
           token: ${{ secrets.GITHUB_TOKEN }}
           tag: ${{ github.ref }}
