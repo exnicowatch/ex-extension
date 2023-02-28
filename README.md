@@ -2,13 +2,18 @@
 
 [exnicowatch](https://github.com/exnicowatch)の拡張機能に関するリポジトリ
 
-TypeScriptで構成されている。[ex-front](https://github.com/exnicowatch/ex-front)([ex.n4a.dev](https://ex.n4a.dev))使用するために拡張機能の導入が必須
+TypeScript+Plasmoで構成されている。[ex-front](https://github.com/exnicowatch/ex-front)([ex.n4a.dev](https://ex.n4a.dev))使用するために拡張機能の導入が必須
 
 ## 使用法
 
+### 開発サーバー
 ```bash
-npm run build
-npm start
+yarn dev
+```
+
+### ビルド
+```bash
+yarn build
 ```
 
 ## 作者
