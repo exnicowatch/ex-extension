@@ -1,0 +1,24 @@
+name: Packaging to Release on tag push
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - 'v*'
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm ci && npm run package
+      - name: Rename zip files
+        run: |
+          mv build/chrome-mv3-prod.zip build/ene-chrome-${{ github.ref }}.zip
+          mv build/edge-mv3-prod.zip build/ene-edge-${{ github.ref }}.zip
+          mv build/firefox-mv2-prod.zip build/ene-firefox-${{ github.ref }}.zip
+      - name: Upload Release
+        uses: ncipollo/release-action@v1.12.0
+        with:
+          artifacts: "build/ene-chrome-${{ github.ref }}.zip,build/ene-edge-${{ github.ref }}.zip,build/ene-firefox-${{ github.ref }}.zip"
+          token: ${{ secrets.GITHUB_TOKEN }}
+          tag: ${{ github.ref }}
