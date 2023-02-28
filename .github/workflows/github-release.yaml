@@ -17,12 +17,13 @@ jobs:
           echo ::set-output name=version::$VERSION
       - name: Rename zip files
         run: |
-          mv build/chrome-mv3-prod.zip build/ene-chrome-${{ steps.version.outputs.version }}.zip
-          mv build/edge-mv3-prod.zip build/ene-edge-${{ steps.version.outputs.version }}.zip
-          mv build/firefox-mv2-prod.zip build/ene-firefox-${{ steps.version.outputs.version }}.zip
+          mv build/chrome-mv3-prod.zip build/exnico-chrome-${{ steps.version.outputs.version }}.zip
+          mv build/edge-mv3-prod.zip build/exnico-edge-${{ steps.version.outputs.version }}.zip
+          mv build/firefox-mv2-prod.zip build/exnico-firefox-${{ steps.version.outputs.version }}.zip
       - name: Upload Release
         uses: ncipollo/release-action@v1.12.0
         with:
-          artifacts: "build/ene-chrome-${{ steps.version.outputs.version }}.zip,build/ene-edge-${{ steps.version.outputs.version }}.zip,build/ene-firefox-${{ steps.version.outputs.version }}.zip"
+          artifacts: "build/exnico-chrome-${{ steps.version.outputs.version }}.zip,build/exnico-edge-${{ steps.version.outputs.version }}.zip,build/exnico-firefox-${{ steps.version.outputs.version }}.zip"
           token: ${{ secrets.GITHUB_TOKEN }}
           tag: ${{ github.ref }}
+          name: ${{ steps.version.outputs.version }}
