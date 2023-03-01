@@ -35,7 +35,16 @@
   },
   "manifest": {
     "host_permissions": [
-      "https://*/*"
-    ]
+      "*://*.nicovideo.jp/*",
+      "*://*.ex.n4a.dev/*",
+      "*://*.dmc.nico/*",
+      "*://*.nimg.jp/*"
+    ],
+    "permissions": [
+      "cookies"
+    ],
+    "externally_connectable": {
+      "matches": [ "*://*.ex.n4a.dev/*" ]
+    }
   }
 }
