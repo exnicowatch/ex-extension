@@ -1,4 +1,4 @@
-async function fetchApi<T> (url: string, method : "GET" | "POST" = "GET", param: {[key: string]: string}): Promise<T> {
+async function fetchApi (url: string, method : "GET" | "POST" = "GET", param: {[key: string]: unknown}) {
   try {
     const res = await fetch(url, {
       method: method,
@@ -10,7 +10,7 @@ async function fetchApi<T> (url: string, method : "GET" | "POST" = "GET", param:
       credentials: "include",
       body: param && JSON.stringify(param)
     });
-    return await res.json() as T;
+    return await res.json();
   } catch {
     return null;
   }
