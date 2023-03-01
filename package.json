@@ -8,6 +8,7 @@
   "scripts": {
     "dev": "plasmo dev",
     "build": "plasmo build",
+    "clean": "rm -rf build/*",
     "package": "npm-run-all -s package:*",
     "package:chrome": "plasmo build --zip --target=chrome-mv3",
     "package:firefox": "plasmo build --zip --target=firefox-mv2",
