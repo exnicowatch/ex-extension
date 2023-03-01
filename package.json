@@ -46,7 +46,7 @@
     "externally_connectable": {
       "matches": [
         "*://*.ex.n4a.dev/*",
-        "*://localhost:3000/*"
+        "*://localhost/*"
       ]
     }
   }
