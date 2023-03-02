@@ -1,9 +1,10 @@
-async function fetchApi (url: string, method : "GET" | "POST" = "GET", param: {[key: string]: unknown}) {
+async function fetchApi (url: string, method : "GET" | "POST" = "GET", param?: {[key: string]: unknown}, additionalHeaders?: {[key: string]: string}) {
   try {
     const res = await fetch(url, {
       method: method,
       mode: "cors",
       headers: {
+        ...additionalHeaders,
         "X-Frontend-Id": "6",
         "X-Frontend-Version": "0"
       },

@@ -10,7 +10,7 @@ chrome.runtime.onMessageExternal.addListener(async (message: Message, sender, se
       break;
     case "fetchApi":
       if(message.payload.url && message.payload.method){
-        const res = await fetchApi(message.payload.url, message.payload.method, message.payload.param);
+        const res = await fetchApi(message.payload.url, message.payload.method, message.payload.param, message.payload.header);
         sendResponse(res);
       }
       else{

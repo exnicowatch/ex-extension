@@ -7,4 +7,5 @@ interface FetchApiPayload{
   url: string;
   method: "GET" | "POST" = "GET";
   param?: {[key: string]: unknown};
+  header?: {[key: string]: string};
 }
