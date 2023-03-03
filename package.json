@@ -1,7 +1,7 @@
 {
   "name": "ex-extension",
   "displayName": "ExNicoExtension",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Browser Extension of ExNicoWatch",
   "author": "Negima1072",
   "packageManager": "yarn@1.22.19",
