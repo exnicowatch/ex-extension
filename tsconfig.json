@@ -15,6 +15,9 @@
       ]
     },
     "baseUrl": ".",
-    "isolatedModules": false
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/@types"
+    ]
   }
 }

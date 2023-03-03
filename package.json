@@ -8,6 +8,7 @@
   "scripts": {
     "dev": "plasmo dev",
     "build": "plasmo build",
+    "clean": "rm -rf build/*",
     "package": "npm-run-all -s package:*",
     "package:chrome": "plasmo build --zip --target=chrome-mv3",
     "package:firefox": "plasmo build --zip --target=firefox-mv2",
@@ -34,7 +35,19 @@
   },
   "manifest": {
     "host_permissions": [
-      "https://*/*"
-    ]
+      "*://*.nicovideo.jp/*",
+      "*://*.ex.n4a.dev/*",
+      "*://*.dmc.nico/*",
+      "*://*.nimg.jp/*"
+    ],
+    "permissions": [
+      "cookies"
+    ],
+    "externally_connectable": {
+      "matches": [
+        "*://*.ex.n4a.dev/*",
+        "*://localhost/*"
+      ]
+    }
   }
 }
