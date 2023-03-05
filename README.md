@@ -2,7 +2,8 @@
 
 [exnicowatch](https://github.com/exnicowatch)の拡張機能に関するリポジトリ
 
-TypeScript+Plasmoで構成されている。[ex-front](https://github.com/exnicowatch/ex-front)([ex.n4a.dev](https://ex.n4a.dev))使用するためにこの拡張機能の導入が必須
+TypeScript+Plasmoで構成されている。<br />
+[ex-front](https://github.com/exnicowatch/ex-front)([ex.n4a.dev](https://ex.n4a.dev))使用するためにこの拡張機能の導入が必須
 
 #### 導入
 
