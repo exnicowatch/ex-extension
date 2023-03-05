@@ -1,4 +1,4 @@
-# exnicowatch/ex-extension
+# <img src="https://avatars.githubusercontent.com/u/126539403" style="width:30px;vertical-align:bottom;margin-bottom:2px;margin-right:4px;"/>exnicowatch/ex-extension
 
 [exnicowatch](https://github.com/exnicowatch)の拡張機能に関するリポジトリ
 
