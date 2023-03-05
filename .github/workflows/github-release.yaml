@@ -27,3 +27,10 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           tag: ${{ github.ref }}
           name: ${{ steps.version.outputs.version }}
+      - name: Deploy to Firefox Addons
+        uses: cardinalby/webext-buildtools-firefox-addons-action@v1
+        with:
+          zipFilePath: "build/exnico-firefox-${{ steps.version.outputs.version }}.zip"
+          extensionId: "{90234682-cc88-494d-960c-c5934eb8f42b}"
+          jwtIssuer: ${{ secrets.FF_JWT_ISSUER }}
+          jwtSecret: ${{ secrets.FF_JWT_SECRET }}
