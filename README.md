@@ -8,7 +8,7 @@ TypeScript+Plasmoで構成されている。[ex-front](https://github.com/exnico
 
 ##### Firefox
 以下からダウンロード<br />
-[https://addons.mozilla.org/ja/developers/addon/exnicoextension](https://addons.mozilla.org/ja/developers/addon/exnicoextension)
+[https://addons.mozilla.org/ja/firefox/addon/exnicoextension/](https://addons.mozilla.org/ja/firefox/addon/exnicoextension/)
 
 ##### Chrome
 リリースから最新バージョンの対応するブラウザのもののzipをダウンロードし読み込む。
